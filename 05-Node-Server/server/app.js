@@ -24,8 +24,12 @@ sequelize.sync();
 // send a response from the endpoint (This is practice route)
 // app.use('/journal', require('.controllers/journalcontroller'));
 app.use(express.json());
+
+//** Exposed Route **/
 app.use('/user', user);
 
+/** Protected Route **/
+//app.use(require("./middleware/validate-session")); - there are a few routes in the journalcontroller we will want exposed to all users, so we cannot use this option
 app.use('/journal', journal);
 
  
