@@ -12,6 +12,8 @@ let user = require('./controllers/usercontroller');
 sequelize.sync();
 //sequelize.sync({force: true})
 
+app.use(require('./middleware/headers'));
+
 // app.use("/test", function(req, res){
 //     res.send('This is a message from the test endpoint on the server');
 // });
